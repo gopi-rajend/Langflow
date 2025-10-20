@@ -27,7 +27,7 @@ public class ExcelReader {
     }
 }
 
-=================================================================================================
+typescript=================================================================================================
 
 import * as XLSX from 'xlsx';
 import * as fs from 'fs';
@@ -40,3 +40,18 @@ const sheet = workbook.Sheets[sheetName];
 const jsonData = XLSX.utils.sheet_to_json(sheet);
 console.log(jsonData);
 
+=========================python-------------------------------------------------------------
+
+import pandas as pd
+
+# Load the Excel file
+df = pd.read_excel("data.xlsx", sheet_name="Sheet1")  # You can also use sheet_name=0 for the first sheet
+
+# Display the entire DataFrame
+print(df)
+
+# Access specific columns
+print("Names:", df["Name"].tolist())  # Replace "Name" with your actual column header
+
+# Access specific rows
+print("First row:", df.iloc[0])
